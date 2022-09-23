@@ -36,10 +36,10 @@ class StoragePage {
     }
 
     fillAndSubmitJoinForm(userCreds) {
-        fillFirstNameInput(userCreds.firstName);
-        fillLastNameInput(userCreds.lastName);
-        fillEmailInput(userCreds.email);
-        submitJoinForm();
+        this.fillFirstNameInput(userCreds.firstName);
+        this.fillLastNameInput(userCreds.lastName);
+        this.fillEmailInput(userCreds.email);
+        this.submitJoinForm();
     }
 
     assertSuccessSentJoinForm() {

@@ -24,7 +24,7 @@ jobs:
             - name: Install dependencies # install npm packages
               run: npm ci 
             - name: run tests
-              run: npx cypress run
+              run: npx cypress run --browser chrome
             - uses: actions/upload-artifact@v2
               if: always()
               with:
