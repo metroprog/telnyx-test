@@ -63,4 +63,9 @@ describe("Test Contact", () => {
         basePage.submitForm();
         basePage.assertErrorMessage("reasonContact", "This field is required.");
     });
+
+    it("All phonenumbers in Calling from overseas section are links as tel", () => {
+        contactPage.assertLinkTextNumberEqualToHrefTel();
+        contactPage.assertPhonenumbersAreLinksAsTel();
+    });
 });
