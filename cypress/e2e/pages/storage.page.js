@@ -11,6 +11,8 @@ const errorMessages = {
     lastName: "#ValidMsgLastName",
     email: "#ValidMsgEmail",
 };
+const accordionTitle = "data-faq-question";
+const accordionContent = "data-faq-answer";
 
 class StoragePage {
     goToJoinForm() {
@@ -51,6 +53,29 @@ class StoragePage {
 
     assertErrorMessage(field, text) {
         cy.get(errorMessages[field]).should("be.visible").should("have.text", text);
+    }
+
+    scrollToFAQ() {
+        cy.contains("h2", "Frequently Asked Questions").scrollIntoView();
+    }
+
+    toggleAccordion(number) {
+        cy.get(`[${accordionTitle}="${number - 1}"]`).click();
+    }
+
+    assertAccordionIsOpened(number) {
+        cy.get(`[${accordionContent}="${number - 1}"]`, { timeout: 5000 })
+            .should("have.attr", "data-is-open", "true")
+            .should("be.visible");
+    }
+
+    assertAccordionsAreClosed(numbers) {
+        numbers = numbers == "all" ? [1, 2, 3, 4, 5, 6, 7, 8] : numbers;
+        for (let value of numbers) {
+            cy.get(`[${accordionContent}="${value - 1}"]`)
+                .should("have.attr", "data-is-open", "false")
+                .should("not.be.visible");
+        }
     }
 }
 

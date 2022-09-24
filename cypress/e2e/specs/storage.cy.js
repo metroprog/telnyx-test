@@ -40,4 +40,17 @@ describe("Test Storage", () => {
         storagePage.submitJoinForm();
         storagePage.assertErrorMessage("firstName", "This field is required.");
     });
+
+    it("Only one accordion at a time can be opened and displayed its content", () => {
+        storagePage.scrollToFAQ();
+        storagePage.assertAccordionIsOpened(1);
+        storagePage.toggleAccordion(1);
+        storagePage.assertAccordionsAreClosed("all");
+        storagePage.toggleAccordion(2);
+        storagePage.assertAccordionIsOpened(2);
+        storagePage.assertAccordionsAreClosed([1, 3, 4, 5, 6, 7, 8]);
+        storagePage.toggleAccordion(3);
+        storagePage.assertAccordionIsOpened(3);
+        storagePage.assertAccordionsAreClosed([1, 2, 4, 5, 6, 7, 8]);
+    });
 });
