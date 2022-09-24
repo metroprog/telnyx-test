@@ -1,9 +1,6 @@
+const basePage = require("./base.page");
 const joinTheWaitListButtons = '[href*="#form"]';
 const joinForm = "#form form";
-const firstNameInput = "#FirstName";
-const lastNameInput = "#LastName";
-const emailInput = "#Email";
-const submitButton = '[type="submit"]';
 const signUpButtons = 'main [href*="sign-up"]';
 const storageButtons = 'main [href*="storage"]';
 const errorMessages = {
@@ -21,27 +18,11 @@ class StoragePage {
         cy.get(joinForm, { timeout: 10000 }).should("be.visible");
     }
 
-    fillFirstNameInput(firstName) {
-        cy.get(firstNameInput).clear().type(firstName);
-    }
-
-    fillLastNameInput(lastName) {
-        cy.get(lastNameInput).clear().type(lastName);
-    }
-
-    fillEmailInput(email) {
-        cy.get(emailInput).clear().type(email);
-    }
-
-    submitJoinForm() {
-        cy.get(submitButton).click();
-    }
-
     fillAndSubmitJoinForm(userCreds) {
-        this.fillFirstNameInput(userCreds.firstName);
-        this.fillLastNameInput(userCreds.lastName);
-        this.fillEmailInput(userCreds.email);
-        this.submitJoinForm();
+        basePage.fillFirstNameInput(userCreds.firstName);
+        basePage.fillLastNameInput(userCreds.lastName);
+        basePage.fillEmailInput(userCreds.email);
+        basePage.submitForm();
     }
 
     assertSuccessSentJoinForm() {
