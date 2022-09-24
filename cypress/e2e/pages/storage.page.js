@@ -11,8 +11,8 @@ const errorMessages = {
     lastName: "#ValidMsgLastName",
     email: "#ValidMsgEmail",
 };
-const accordionTitle = "data-faq-question";
-const accordionContent = "data-faq-answer";
+const accordionTitles = "[data-faq-question]";
+const accordionContents = "[data-faq-answer]";
 
 class StoragePage {
     goToJoinForm() {
@@ -60,19 +60,23 @@ class StoragePage {
     }
 
     toggleAccordion(number) {
-        cy.get(`[${accordionTitle}="${number - 1}"]`).click();
+        cy.get(accordionTitles)
+            .eq(number - 1)
+            .click();
     }
 
     assertAccordionIsOpened(number) {
-        cy.get(`[${accordionContent}="${number - 1}"]`, { timeout: 5000 })
+        cy.get(accordionContents)
+            .eq(number - 1, { timeout: 5000 })
             .should("have.attr", "data-is-open", "true")
             .should("be.visible");
     }
 
     assertAccordionsAreClosed(numbers) {
         numbers = numbers == "all" ? [1, 2, 3, 4, 5, 6, 7, 8] : numbers;
-        for (let value of numbers) {
-            cy.get(`[${accordionContent}="${value - 1}"]`)
+        for (let number of numbers) {
+            cy.get(accordionContents)
+                .eq(number - 1)
                 .should("have.attr", "data-is-open", "false")
                 .should("not.be.visible");
         }
