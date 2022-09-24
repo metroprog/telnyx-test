@@ -3,8 +3,12 @@ const reasonContactSelect = "#Reason_for_Contact__c";
 const primaryInterestSelect = "#Use_Case_Form__c";
 
 class ContactPage {
+    chooseReasonSelect(option) {
+        cy.get(reasonContactSelect).select(option);
+    }
+
     fillAndSubmitTalkExpertForm(userCreds) {
-        cy.get(reasonContactSelect).select("Sales-Inquiry");
+        this.chooseReasonSelect("Sales-Inquiry");
         basePage.fillFirstNameInput(userCreds.firstName);
         basePage.fillLastNameInput(userCreds.lastName);
         basePage.fillEmailInput(userCreds.email);

@@ -25,17 +25,17 @@ describe("Test Storage", () => {
         basePage.fillFirstNameInput(helper.userCreds.firstName);
         basePage.fillLastNameInput(helper.userCreds.lastName);
         basePage.submitForm();
-        storagePage.assertErrorMessage("email", "Must be valid email. example@yourdomain.com");
+        basePage.assertErrorMessage("email", "Must be valid email. example@yourdomain.com");
         cy.reload(true);
         basePage.fillFirstNameInput(helper.userCreds.firstName);
         basePage.fillEmailInput(helper.userCreds.email);
         basePage.submitForm();
-        storagePage.assertErrorMessage("lastName", "This field is required.");
+        basePage.assertErrorMessage("lastName", "This field is required.");
         cy.reload(true);
         basePage.fillLastNameInput(helper.userCreds.lastName);
         basePage.fillEmailInput(helper.userCreds.email);
         basePage.submitForm();
-        storagePage.assertErrorMessage("firstName", "This field is required.");
+        basePage.assertErrorMessage("firstName", "This field is required.");
     });
 
     it("Only one accordion at a time can be opened and displayed its content", () => {

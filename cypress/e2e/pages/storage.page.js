@@ -3,11 +3,6 @@ const joinTheWaitListButtons = '[href*="#form"]';
 const joinForm = "#form form";
 const signUpButtons = 'main [href*="sign-up"]';
 const storageButtons = 'main [href*="storage"]';
-const errorMessages = {
-    firstName: "#ValidMsgFirstName",
-    lastName: "#ValidMsgLastName",
-    email: "#ValidMsgEmail",
-};
 const accordionTitles = "[data-faq-question]";
 const accordionContents = "[data-faq-answer]";
 
@@ -30,10 +25,6 @@ class StoragePage {
         cy.contains("h1", "You're on the waitlist!").should("be.visible");
         cy.get(signUpButtons).first().should("have.text", "Create a Telnyx account");
         cy.get(storageButtons).first().should("have.text", "Take me back to Telnyx Storage");
-    }
-
-    assertErrorMessage(field, text) {
-        cy.get(errorMessages[field]).should("be.visible").should("have.text", text);
     }
 
     scrollToFAQ() {
