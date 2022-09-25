@@ -25,4 +25,10 @@ describe("Test LogIn", () => {
         loginPage.assertSSOFormIsNotSent();
         loginPage.assertSameUrl("https://portal.telnyx.com/#/login/sign-in");
     });
+
+    it.only("Successfully send Verification Email form", () => {
+        loginPage.fillAndSubmitVerificationEmailForm(helper.userCreds);
+        loginPage.assertSuccessSentVerificationEmailForm();
+        loginPage.assertSameUrl("https://portal.telnyx.com/#/login/resend-email");
+    });
 });
