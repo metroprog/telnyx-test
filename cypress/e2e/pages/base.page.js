@@ -25,6 +25,10 @@ class BasePage {
         cy.get(emailInput).clear().type(email);
     }
 
+    fillPasswordInput(password) {
+        cy.get(passwordInput).clear().type(password);
+    }
+
     fillWebsiteInput(website) {
         cy.get(websiteInput).clear().type(website);
     }
