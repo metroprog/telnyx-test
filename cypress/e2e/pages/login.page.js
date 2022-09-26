@@ -1,5 +1,3 @@
-const basePage = require("./base.page");
-
 const loginTab = '[data-testid="login.signin.tab.login"]';
 const ssoTab = '[data-testid="login.signin.tab.sso"]';
 const loginForm = '[aria-label="loginForm"]';

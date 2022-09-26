@@ -7,6 +7,10 @@ const accordionTitles = "[data-faq-question]";
 const accordionContents = "[data-faq-answer]";
 
 class StoragePage {
+    get accordionsCount() {
+        return cy.get(accordionTitles).its("length");
+    }
+
     goToJoinForm() {
         cy.get(joinTheWaitListButtons).first().should("have.text", "Join the waitlist").click();
         cy.url().should("include", "#form");
@@ -44,9 +48,13 @@ class StoragePage {
             .should("be.visible");
     }
 
-    assertAccordionsAreClosed(numbers) {
-        numbers = numbers == "all" ? [1, 2, 3, 4, 5, 6, 7, 8] : numbers;
+    assertAccordionsAreClosedExcept(exceptNumber = 0) {
+        let numbers = [...Array(this.accordionsCount + 1).keys()];
+        numbers.splice(0, 1);
         for (let number of numbers) {
+            if (number == exceptNumber) {
+                continue;
+            }
             cy.get(accordionContents)
                 .eq(number - 1)
                 .should("have.attr", "data-is-open", "false")
