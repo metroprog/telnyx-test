@@ -14,7 +14,7 @@ describe("Test Resources", () => {
 
     it("Filter by content in blog should display only articles in selected category", () => {
         resourcesPage.assertFiltersByContentIsNotChosenExcept();
-		resourcesPage.assertArticlesCategoryNotOnlyFiltered();
+		// resourcesPage.assertArticlesCategoryNotOnlyFiltered();
         let filterNumber = 3;
         resourcesPage.toggleFilterByContent(filterNumber);
         resourcesPage.assertURLContainsChosenFilterName(filterNumber);

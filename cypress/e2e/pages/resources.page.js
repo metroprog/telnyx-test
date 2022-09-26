@@ -49,18 +49,18 @@ class ResourcesPage {
             });
     }
 
-	// assertArticlesCategoryNotOnlyFiltered(number = 1) {
-	// 	cy.get(articlesPagination).scrollIntoView({ duration: 3000 });
-	// 	let countArticlesByCategory = 0;
-    //     cy.get(articlesCategories).as('$cat')
-    //         .each(($category, index, $list) => {
-    //             if ($category.get(0).textContent == filterByContentNames[number - 1]) {
-	// 				countArticlesByCategory += 1;
-	// 			}
-    //         }).then(($cat) => {
-	// 			expect($cat).to.have.length.greaterThan(countArticlesByCategory);
-	// 		});
-	// }
+	assertArticlesCategoryNotOnlyFiltered(number = 1) {
+		cy.get(articlesPagination).scrollIntoView({ duration: 3000 });
+		let countArticlesByCategory = 0;
+        cy.get(articlesCategories).as('$cat')
+            .each(($category, index, $list) => {
+                if ($category.get(0).textContent == filterByContentNames[number - 1]) {
+					countArticlesByCategory += 1;
+				}
+            }).then(($cat) => {
+				expect($cat).to.have.length.greaterThan(countArticlesByCategory);
+			});
+	}
 }
 
 module.exports = new ResourcesPage();
