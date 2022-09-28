@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2022-09-28T20:53:22.595Z",
-    "end": "2022-09-28T20:53:44.813Z",
-    "duration": 22218,
+    "start": "2022-09-28T21:21:46.031Z",
+    "end": "2022-09-28T21:22:11.174Z",
+    "duration": 25143,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f8b0aa30-1108-4ee1-94f6-c254bb33f0da",
+      "uuid": "abc9ca6a-cb32-47b9-a76f-0a0600f37614",
       "title": "",
       "fullFile": "cypress/e2e/specs/login.cy.js",
       "file": "cypress/e2e/specs/login.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+          "uuid": "ff89d64d-14c7-4d71-a51c-837962d47ff8",
           "title": "Test LogIn",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Cannot login with unregistered credentials",
               "fullTitle": "Test LogIn Cannot login with unregistered credentials",
               "timedOut": null,
-              "duration": 10419,
+              "duration": 12647,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "loginPage.fillAndSubmitLogInForm(user);\nloginPage.assertIsNotLoggedIn();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/sign-in\");",
               "err": {},
-              "uuid": "7e464ec5-2feb-42be-a103-aa9f124fb4d6",
-              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "uuid": "bcd29f8e-3c18-4ab6-acfc-c16438ad23cc",
+              "parentUUID": "ff89d64d-14c7-4d71-a51c-837962d47ff8",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Cannot send Single Sign-On form with unregistered credentials",
               "fullTitle": "Test LogIn Cannot send Single Sign-On form with unregistered credentials",
               "timedOut": null,
-              "duration": 5652,
+              "duration": 6266,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "loginPage.fillAndSubmitSSOForm(user);\nloginPage.assertSSOFormIsNotSent();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/sign-in\");",
               "err": {},
-              "uuid": "20156744-bf45-4e3a-8c10-b22ea56ecea5",
-              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "uuid": "a815484b-794e-4a82-9769-bcb9be600773",
+              "parentUUID": "ff89d64d-14c7-4d71-a51c-837962d47ff8",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Successfully send Verification Email form",
               "fullTitle": "Test LogIn Successfully send Verification Email form",
               "timedOut": null,
-              "duration": 5988,
+              "duration": 6010,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "loginPage.fillAndSubmitVerificationEmailForm(user);\nloginPage.assertSuccessSentVerificationEmailForm();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/resend-email\");",
               "err": {},
-              "uuid": "b8dbdda2-d2a0-4f0a-b299-cfb598293a5e",
-              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "uuid": "4038711a-9ec3-41cb-ab63-e83ec80c41b8",
+              "parentUUID": "ff89d64d-14c7-4d71-a51c-837962d47ff8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7e464ec5-2feb-42be-a103-aa9f124fb4d6",
-            "20156744-bf45-4e3a-8c10-b22ea56ecea5",
-            "b8dbdda2-d2a0-4f0a-b299-cfb598293a5e"
+            "bcd29f8e-3c18-4ab6-acfc-c16438ad23cc",
+            "a815484b-794e-4a82-9769-bcb9be600773",
+            "4038711a-9ec3-41cb-ab63-e83ec80c41b8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 22059,
+          "duration": 24923,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

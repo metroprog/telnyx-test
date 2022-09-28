@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-09-28T20:53:46.509Z",
-    "end": "2022-09-28T20:53:58.825Z",
-    "duration": 12316,
+    "start": "2022-09-28T21:22:13.049Z",
+    "end": "2022-09-28T21:22:26.212Z",
+    "duration": 13163,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3053ba85-4eb1-429b-b635-0891d9534e2b",
+      "uuid": "031a378b-0bb3-4bb4-b131-829d5b3a9109",
       "title": "",
       "fullFile": "cypress/e2e/specs/resources.cy.js",
       "file": "cypress/e2e/specs/resources.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5b6d61a6-a1b6-44c9-a426-b566d862f8ea",
+          "uuid": "5aa76eae-1822-4b00-b7c8-00008597ac8b",
           "title": "Test Resources",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Filter by content in blog should display only articles in selected category",
               "fullTitle": "Test Resources Filter by content in blog should display only articles in selected category",
               "timedOut": null,
-              "duration": 11926,
+              "duration": 12684,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "resourcesPage.assertFiltersByContentIsNotChosenExcept();\nresourcesPage.toggleFilterByContent(filterNumber);\nresourcesPage.assertURLContainsChosenFilterName(filterNumber);\nresourcesPage.assertFilterByContentIsChosen(filterNumber);\nresourcesPage.assertFiltersByContentIsNotChosenExcept(filterNumber);\nresourcesPage.assertArticlesCategoryOnlyFiltered(filterNumber);\nfilterNumber = 2;\nresourcesPage.toggleFilterByContent(filterNumber);\nresourcesPage.assertURLContainsChosenFilterName(filterNumber);\nresourcesPage.assertFilterByContentIsChosen(filterNumber);\nresourcesPage.assertFiltersByContentIsNotChosenExcept(filterNumber);\nresourcesPage.assertArticlesCategoryOnlyFiltered(filterNumber);\nresourcesPage.toggleFilterByContent(filterNumber);\nresourcesPage.assertFiltersByContentIsNotChosenExcept();\ncy.url().should(\"eq\", \"https://telnyx.com/resources\");",
               "err": {},
-              "uuid": "4e643eb5-168c-408c-bf01-1803ad8bb3ac",
-              "parentUUID": "5b6d61a6-a1b6-44c9-a426-b566d862f8ea",
+              "uuid": "bbeaa950-4059-4857-9a71-2528c7b1b6e6",
+              "parentUUID": "5aa76eae-1822-4b00-b7c8-00008597ac8b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4e643eb5-168c-408c-bf01-1803ad8bb3ac"
+            "bbeaa950-4059-4857-9a71-2528c7b1b6e6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11926,
+          "duration": 12684,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
