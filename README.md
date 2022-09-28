@@ -33,9 +33,21 @@ npm install
 ```
 npx cypress run 
 ```
+or 
+```
+npm run cypress:run 
+```
+-- To launch tests with changed configuration (for detailed configuration see .config.js files):
+ ```
+npm run cypress:run:chrome1366
+```
 - For execution from the Test Runner UI, run the command stated below: 
 ```
 npx cypress open 
+```
+or 
+```
+npm run cypress:open 
 ```
 Then, click on the spec file that you want to trigger for execution.
 

@@ -3,7 +3,6 @@ const helper = require("../pages/helper");
 
 describe("Test LogIn", () => {
     beforeEach(() => {
-        cy.viewport(1920, 1080);
         cy.visit("https://portal.telnyx.com/");
         cy.wait(1000);
         cy.get("body").then(($body) => {

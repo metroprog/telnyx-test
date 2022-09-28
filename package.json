@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run --browser chrome"
+    "cypress:run": "npx cypress run",
+    "cypress:run:chrome1366": "npx cypress run --config-file 1366p.config.js --browser chrome"
   },
   "author": "",
   "license": "ISC",

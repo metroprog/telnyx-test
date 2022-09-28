@@ -2,7 +2,6 @@ const resourcesPage = require("../pages/resources.page");
 
 describe("Test Resources", () => {
     beforeEach(() => {
-        cy.viewport(1920, 1080);
         cy.visit("https://telnyx.com/resources");
         cy.wait(1000);
         cy.get("body").then(($body) => {

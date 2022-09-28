@@ -7,7 +7,7 @@ module.exports = defineConfig({
     },
     video: false,
     videoUploadOnPasses: false,
-    viewportHeight: 1080,
-    viewportWidth: 1920,
+    viewportHeight: 768,
+    viewportWidth: 1366,
   },
 });
