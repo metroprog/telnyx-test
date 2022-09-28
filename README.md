@@ -24,6 +24,7 @@ npm -v
 - In the root directory of a project, run:
 ```
 git clone https://github.com/metroprog/telnyx-test.git
+cd telnyx-test
 npm install 
 ```
 
@@ -50,5 +51,14 @@ or
 npm run cypress:open 
 ```
 Then, click on the spec file that you want to trigger for execution.
+
+## Reporting
+
+- For create HTML report, run the commands given below:
+
+```
+npm run merge:reports 
+npm run generate:report
+```
 
 See example of reporting at: [gh-pages](https://metroprog.github.io/telnyx-test/)
