@@ -43,25 +43,14 @@ class ResourcesPage {
 
     assertArticlesCategoryOnlyFiltered(number) {
         cy.get(articlesPagination).scrollIntoView({ duration: 3000 });
-        cy.get(articlesCategories)
-            .each(($category, index, $list) => {
-                expect($category.get(0).textContent).to.contain(filterByContentNames[number - 1]);
-            });
+        cy.get(articlesCategories).each(($category, index, $list) => {
+            expect($category.get(0).textContent).to.contain(filterByContentNames[number - 1]);
+        });
     }
 
-	assertArticlesCategoryNotOnlyFiltered(number = 1) {
-		cy.get(articlesPagination).scrollIntoView({ duration: 3000 });
-		let countArticlesByCategory = 0;
-        cy.get(articlesCategories)
-            .each(($category, index, $list) => {
-                if ($category.get(0).textContent == filterByContentNames[number - 1]) {
-					countArticlesByCategory += 1;
-				}
-            }).then(($cat) => {
-				expect($cat).to.have.length.greaterThan(countArticlesByCategory);
-			});
-
-	}
+    get articlesCount() {
+        return cy.get(articlesCategories).its("length");
+    }
 }
 
 module.exports = new ResourcesPage();

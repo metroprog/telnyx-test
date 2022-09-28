@@ -22,19 +22,32 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
             - name: Install dependencies # install npm packages
-              run: npm ci 
-            - name: run tests
-              run: npx cypress run --browser chrome
-            - uses: actions/upload-artifact@v2
+              run: npm ci
+            - name: Run tests
+              run: npm run cypress:run
+            - name: Merge test results into one
+              run: npm run merge:reports
+            - name: Generate HTML report
+              run: npm run report
+            - name: Upload report
+              uses: actions/upload-artifact@v2
               if: always()
               with:
-                name: videos
-                path: cypress/videos/
-                retention-days: 30
-            - uses: actions/upload-artifact@v2
+                  name: E2E Test Reports
+                  path: cypress/report
+                  retention-days: 20
+            - name: Get history
+              uses: actions/checkout@v2
               if: always()
+              continue-on-error: true
               with:
-                name: screenshots
-                path: cypress/screenshots/
-                retention-days: 30
-
+                  ref: gh-pages
+                  path: gh-pages
+            - name: Deploy report page
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_branch: gh-pages
+                  publish_dir: ./cypress/report
+                  user_name: "github-actions[bot]"
+                  user_email: "github-actions[bot]@users.noreply.github.com"

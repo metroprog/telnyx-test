@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run",
-    "cypress:run:chrome1366": "npx cypress run --config-file 1366p.config.js --browser chrome"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:chrome1366": "cypress run --config-file 1366p.config.js --browser chrome",
+    "merge:reports": "mochawesome-merge \"cypress/report/*.json\" -o \"cypress/report/index.json\"",
+    "report": "marge cypress/report/index.json --reportDir ./ --inline",
+    "delete:reports": "del /F/Q/S cypress\\report\\*.*"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.8.0"
+    "cypress": "^10.8.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

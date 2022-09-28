@@ -1,5 +1,6 @@
 const basePage = require("../pages/base.page");
 const storagePage = require("../pages/storage.page");
+let accNumber = 1;
 
 describe("Test Storage", () => {
     let user;
@@ -40,7 +41,6 @@ describe("Test Storage", () => {
 
     it("Only one accordion at a time can be opened and displayed its content", () => {
         storagePage.scrollToFAQ();
-        let accNumber = 1;
         storagePage.assertAccordionIsOpened(accNumber);
         storagePage.toggleAccordion(accNumber);
         storagePage.assertAccordionsAreClosedExcept();
