@@ -1,8 +1,14 @@
 const basePage = require("../pages/base.page");
 const storagePage = require("../pages/storage.page");
-const helper = require("../pages/helper");
 
 describe("Test Storage", () => {
+    let user;
+    before(() => {
+        cy.fixture("user").then((fuser) => {
+            user = fuser;
+        });
+    });
+
     beforeEach(() => {
         cy.visit("/products/storage/");
         basePage.closeCookies();
@@ -10,24 +16,24 @@ describe("Test Storage", () => {
 
     it("Successfully join the waitlist by sending form with valid values", () => {
         storagePage.goToJoinForm();
-        storagePage.fillAndSubmitJoinForm(helper.userCreds);
+        storagePage.fillAndSubmitJoinForm(user);
         storagePage.assertSuccessSentJoinForm();
     });
 
     it("Cannot submit Join the waitlist form with empty required fields", () => {
         storagePage.goToJoinForm();
-        basePage.fillFirstNameInput(helper.userCreds.firstName);
-        basePage.fillLastNameInput(helper.userCreds.lastName);
+        basePage.fillFirstNameInput(user.firstName);
+        basePage.fillLastNameInput(user.lastName);
         basePage.submitForm();
         basePage.assertErrorMessage("email", "Must be valid email. example@yourdomain.com");
         cy.reload(true);
-        basePage.fillFirstNameInput(helper.userCreds.firstName);
-        basePage.fillEmailInput(helper.userCreds.email);
+        basePage.fillFirstNameInput(user.firstName);
+        basePage.fillEmailInput(user.email);
         basePage.submitForm();
         basePage.assertErrorMessage("lastName", "This field is required.");
         cy.reload(true);
-        basePage.fillLastNameInput(helper.userCreds.lastName);
-        basePage.fillEmailInput(helper.userCreds.email);
+        basePage.fillLastNameInput(user.lastName);
+        basePage.fillEmailInput(user.email);
         basePage.submitForm();
         basePage.assertErrorMessage("firstName", "This field is required.");
     });
