@@ -1,3 +1,4 @@
+const basePage = require("../pages/base.page");
 const resourcesPage = require("../pages/resources.page");
 
 describe("Test Resources", () => {

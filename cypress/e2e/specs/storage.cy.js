@@ -32,7 +32,7 @@ describe("Test Storage", () => {
         basePage.assertErrorMessage("firstName", "This field is required.");
     });
 
-    it.only("Only one accordion at a time can be opened and displayed its content", () => {
+    it("Only one accordion at a time can be opened and displayed its content", () => {
         storagePage.scrollToFAQ();
         let accNumber = 1;
         storagePage.assertAccordionIsOpened(accNumber);

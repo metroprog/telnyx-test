@@ -1,3 +1,4 @@
+const basePage = require("../pages/base.page");
 const loginPage = require("../pages/login.page");
 const helper = require("../pages/helper");
 
