@@ -1,3 +1,4 @@
+const cookiesCloseButton = '[aria-label="close and deny"]';
 const firstNameInput = "#FirstName";
 const lastNameInput = "#LastName";
 const emailInput = "#Email";
@@ -13,6 +14,15 @@ const errorMessages = {
 };
 
 class BasePage {
+    closeCookies() {
+        cy.wait(1000);
+        cy.get("body").then(($body) => {
+            if ($body.find(cookiesCloseButton).length > 0) {
+                cy.get(cookiesCloseButton).click();
+            }
+        });
+    }
+
     fillFirstNameInput(firstName) {
         cy.get(firstNameInput).clear().type(firstName);
     }

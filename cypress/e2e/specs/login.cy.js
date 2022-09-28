@@ -4,12 +4,7 @@ const helper = require("../pages/helper");
 describe("Test LogIn", () => {
     beforeEach(() => {
         cy.visit("https://portal.telnyx.com/");
-        cy.wait(1000);
-        cy.get("body").then(($body) => {
-            if ($body.find('[aria-label="close and deny"]').length > 0) {
-                cy.get('[aria-label="close and deny"]').click();
-            }
-        });
+        basePage.closeCookies();
     });
 
     it("Cannot login with unregistered credentials", () => {
@@ -24,7 +19,7 @@ describe("Test LogIn", () => {
         loginPage.assertSameUrl("https://portal.telnyx.com/#/login/sign-in");
     });
 
-    it.only("Successfully send Verification Email form", () => {
+    it("Successfully send Verification Email form", () => {
         loginPage.fillAndSubmitVerificationEmailForm(helper.userCreds);
         loginPage.assertSuccessSentVerificationEmailForm();
         loginPage.assertSameUrl("https://portal.telnyx.com/#/login/resend-email");

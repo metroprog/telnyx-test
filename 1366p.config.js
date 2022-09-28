@@ -7,6 +7,7 @@ module.exports = defineConfig({
     },
     video: false,
     videoUploadOnPasses: false,
+    baseUrl: 'https://telnyx.com',
     viewportHeight: 768,
     viewportWidth: 1366,
   },

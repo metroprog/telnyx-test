@@ -4,13 +4,8 @@ const helper = require("../pages/helper");
 
 describe("Test Contact", () => {
     beforeEach(() => {
-        cy.visit("https://telnyx.com/contact-us");
-        cy.wait(1000);
-        cy.get("body").then(($body) => {
-            if ($body.find('[aria-label="close and deny"]').length > 0) {
-                cy.get('[aria-label="close and deny"]').click();
-            }
-        });
+        cy.visit("/contact-us");
+        basePage.closeCookies();
     });
 
     it("Successfully sending Talk to an expert form with valid values", () => {

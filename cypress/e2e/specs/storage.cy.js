@@ -4,13 +4,8 @@ const helper = require("../pages/helper");
 
 describe("Test Storage", () => {
     beforeEach(() => {
-        cy.visit("https://telnyx.com/products/storage/");
-        cy.wait(1000);
-        cy.get("body").then(($body) => {
-            if ($body.find('[aria-label="close and deny"]').length > 0) {
-                cy.get('[aria-label="close and deny"]').click();
-            }
-        });
+        cy.visit("/products/storage/");
+        basePage.closeCookies();
     });
 
     it("Successfully join the waitlist by sending form with valid values", () => {
@@ -37,7 +32,7 @@ describe("Test Storage", () => {
         basePage.assertErrorMessage("firstName", "This field is required.");
     });
 
-    it("Only one accordion at a time can be opened and displayed its content", () => {
+    it.only("Only one accordion at a time can be opened and displayed its content", () => {
         storagePage.scrollToFAQ();
         let accNumber = 1;
         storagePage.assertAccordionIsOpened(accNumber);

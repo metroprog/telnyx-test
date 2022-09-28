@@ -2,13 +2,8 @@ const resourcesPage = require("../pages/resources.page");
 
 describe("Test Resources", () => {
     beforeEach(() => {
-        cy.visit("https://telnyx.com/resources");
-        cy.wait(1000);
-        cy.get("body").then(($body) => {
-            if ($body.find('[aria-label="close and deny"]').length > 0) {
-                cy.get('[aria-label="close and deny"]').click();
-            }
-        });
+        cy.visit("/resources");
+        basePage.closeCookies();
     });
 
     it("Filter by content in blog should display only articles in selected category", () => {
