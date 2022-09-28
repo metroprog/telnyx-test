@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-28T20:53:22.595Z",
+    "end": "2022-09-28T20:53:44.813Z",
+    "duration": 22218,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f8b0aa30-1108-4ee1-94f6-c254bb33f0da",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/login.cy.js",
+      "file": "cypress/e2e/specs/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+          "title": "Test LogIn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cannot login with unregistered credentials",
+              "fullTitle": "Test LogIn Cannot login with unregistered credentials",
+              "timedOut": null,
+              "duration": 10419,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillAndSubmitLogInForm(user);\nloginPage.assertIsNotLoggedIn();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/sign-in\");",
+              "err": {},
+              "uuid": "7e464ec5-2feb-42be-a103-aa9f124fb4d6",
+              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot send Single Sign-On form with unregistered credentials",
+              "fullTitle": "Test LogIn Cannot send Single Sign-On form with unregistered credentials",
+              "timedOut": null,
+              "duration": 5652,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillAndSubmitSSOForm(user);\nloginPage.assertSSOFormIsNotSent();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/sign-in\");",
+              "err": {},
+              "uuid": "20156744-bf45-4e3a-8c10-b22ea56ecea5",
+              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Successfully send Verification Email form",
+              "fullTitle": "Test LogIn Successfully send Verification Email form",
+              "timedOut": null,
+              "duration": 5988,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillAndSubmitVerificationEmailForm(user);\nloginPage.assertSuccessSentVerificationEmailForm();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/resend-email\");",
+              "err": {},
+              "uuid": "b8dbdda2-d2a0-4f0a-b299-cfb598293a5e",
+              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7e464ec5-2feb-42be-a103-aa9f124fb4d6",
+            "20156744-bf45-4e3a-8c10-b22ea56ecea5",
+            "b8dbdda2-d2a0-4f0a-b299-cfb598293a5e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

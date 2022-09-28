@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-28T20:52:45.516Z",
+    "end": "2022-09-28T20:53:20.883Z",
+    "duration": 35367,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c6418ce2-851c-4af5-b546-0e4d199def46",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/contact.cy.js",
+      "file": "cypress/e2e/specs/contact.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+          "title": "Test Contact",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully sending Talk to an expert form with valid values",
+              "fullTitle": "Test Contact Successfully sending Talk to an expert form with valid values",
+              "timedOut": null,
+              "duration": 11083,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "contactPage.fillAndSubmitTalkExpertForm(user);\ncontactPage.assertSuccessSentTalkExpertForm(user.email);",
+              "err": {},
+              "uuid": "caa93655-f81a-4cb0-bd1b-5a6ef6d6d9b2",
+              "parentUUID": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot submit Talk to an expert form with empty required fields",
+              "fullTitle": "Test Contact Cannot submit Talk to an expert form with empty required fields",
+              "timedOut": null,
+              "duration": 21894,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "contactPage.chooseReasonSelect(\"Sales-Inquiry\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"primaryInterest\", \"This field is required.\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"website\", \"Must be a url. http://www.example.com/\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"email\", \"Must be valid email. example@yourdomain.com\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"lastName\", \"This field is required.\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"firstName\", \"This field is required.\");\ncy.reload(true);\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"reasonContact\", \"This field is required.\");",
+              "err": {},
+              "uuid": "d1bae4ec-0edf-4f79-bcdb-30adc9f1590d",
+              "parentUUID": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "All phonenumbers in Calling from overseas section are links as tel",
+              "fullTitle": "Test Contact All phonenumbers in Calling from overseas section are links as tel",
+              "timedOut": null,
+              "duration": 2049,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "contactPage.assertLinkTextNumberEqualToHrefTel();\ncontactPage.assertPhonenumbersAreLinksAsTel();",
+              "err": {},
+              "uuid": "6b9ebc96-89e3-4fc3-b929-229965dbde38",
+              "parentUUID": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "caa93655-f81a-4cb0-bd1b-5a6ef6d6d9b2",
+            "d1bae4ec-0edf-4f79-bcdb-30adc9f1590d",
+            "6b9ebc96-89e3-4fc3-b929-229965dbde38"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35026,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

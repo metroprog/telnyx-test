@@ -1,0 +1,393 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-28T20:52:45.516Z",
+    "end": "2022-09-28T20:54:19.427Z",
+    "duration": 87757,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f8b0aa30-1108-4ee1-94f6-c254bb33f0da",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/login.cy.js",
+      "file": "cypress/e2e/specs/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+          "title": "Test LogIn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cannot login with unregistered credentials",
+              "fullTitle": "Test LogIn Cannot login with unregistered credentials",
+              "timedOut": null,
+              "duration": 10419,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillAndSubmitLogInForm(user);\nloginPage.assertIsNotLoggedIn();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/sign-in\");",
+              "err": {},
+              "uuid": "7e464ec5-2feb-42be-a103-aa9f124fb4d6",
+              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot send Single Sign-On form with unregistered credentials",
+              "fullTitle": "Test LogIn Cannot send Single Sign-On form with unregistered credentials",
+              "timedOut": null,
+              "duration": 5652,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillAndSubmitSSOForm(user);\nloginPage.assertSSOFormIsNotSent();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/sign-in\");",
+              "err": {},
+              "uuid": "20156744-bf45-4e3a-8c10-b22ea56ecea5",
+              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Successfully send Verification Email form",
+              "fullTitle": "Test LogIn Successfully send Verification Email form",
+              "timedOut": null,
+              "duration": 5988,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillAndSubmitVerificationEmailForm(user);\nloginPage.assertSuccessSentVerificationEmailForm();\nloginPage.assertSameUrl(\"https://portal.telnyx.com/#/login/resend-email\");",
+              "err": {},
+              "uuid": "b8dbdda2-d2a0-4f0a-b299-cfb598293a5e",
+              "parentUUID": "2f7be06f-971a-47ca-980c-2b7d64b9bb99",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7e464ec5-2feb-42be-a103-aa9f124fb4d6",
+            "20156744-bf45-4e3a-8c10-b22ea56ecea5",
+            "b8dbdda2-d2a0-4f0a-b299-cfb598293a5e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3053ba85-4eb1-429b-b635-0891d9534e2b",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/resources.cy.js",
+      "file": "cypress/e2e/specs/resources.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5b6d61a6-a1b6-44c9-a426-b566d862f8ea",
+          "title": "Test Resources",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Filter by content in blog should display only articles in selected category",
+              "fullTitle": "Test Resources Filter by content in blog should display only articles in selected category",
+              "timedOut": null,
+              "duration": 11926,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "resourcesPage.assertFiltersByContentIsNotChosenExcept();\nresourcesPage.toggleFilterByContent(filterNumber);\nresourcesPage.assertURLContainsChosenFilterName(filterNumber);\nresourcesPage.assertFilterByContentIsChosen(filterNumber);\nresourcesPage.assertFiltersByContentIsNotChosenExcept(filterNumber);\nresourcesPage.assertArticlesCategoryOnlyFiltered(filterNumber);\nfilterNumber = 2;\nresourcesPage.toggleFilterByContent(filterNumber);\nresourcesPage.assertURLContainsChosenFilterName(filterNumber);\nresourcesPage.assertFilterByContentIsChosen(filterNumber);\nresourcesPage.assertFiltersByContentIsNotChosenExcept(filterNumber);\nresourcesPage.assertArticlesCategoryOnlyFiltered(filterNumber);\nresourcesPage.toggleFilterByContent(filterNumber);\nresourcesPage.assertFiltersByContentIsNotChosenExcept();\ncy.url().should(\"eq\", \"https://telnyx.com/resources\");",
+              "err": {},
+              "uuid": "4e643eb5-168c-408c-bf01-1803ad8bb3ac",
+              "parentUUID": "5b6d61a6-a1b6-44c9-a426-b566d862f8ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4e643eb5-168c-408c-bf01-1803ad8bb3ac"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11926,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d4e23f53-63fa-4186-8a0d-904d97b01917",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/storage.cy.js",
+      "file": "cypress/e2e/specs/storage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8da32192-367c-4409-b4db-42f0599e8697",
+          "title": "Test Storage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully join the waitlist by sending form with valid values",
+              "fullTitle": "Test Storage Successfully join the waitlist by sending form with valid values",
+              "timedOut": null,
+              "duration": 7142,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "storagePage.goToJoinForm();\nstoragePage.fillAndSubmitJoinForm(user);\nstoragePage.assertSuccessSentJoinForm();",
+              "err": {},
+              "uuid": "c4b90c4b-83dc-4aff-a9cb-b2ce4e6b1b63",
+              "parentUUID": "8da32192-367c-4409-b4db-42f0599e8697",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot submit Join the waitlist form with empty required fields",
+              "fullTitle": "Test Storage Cannot submit Join the waitlist form with empty required fields",
+              "timedOut": null,
+              "duration": 8610,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "storagePage.goToJoinForm();\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"email\", \"Must be valid email. example@yourdomain.com\");\ncy.reload(true);\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillEmailInput(user.email);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"lastName\", \"This field is required.\");\ncy.reload(true);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"firstName\", \"This field is required.\");",
+              "err": {},
+              "uuid": "0c51e53c-e595-4696-abc2-c09c5d7f17d7",
+              "parentUUID": "8da32192-367c-4409-b4db-42f0599e8697",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Only one accordion at a time can be opened and displayed its content",
+              "fullTitle": "Test Storage Only one accordion at a time can be opened and displayed its content",
+              "timedOut": null,
+              "duration": 2994,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "storagePage.scrollToFAQ();\nstoragePage.assertAccordionIsOpened(accNumber);\nstoragePage.toggleAccordion(accNumber);\nstoragePage.assertAccordionsAreClosedExcept();\naccNumber = 2;\nstoragePage.toggleAccordion(accNumber);\nstoragePage.assertAccordionIsOpened(accNumber);\nstoragePage.assertAccordionsAreClosedExcept(accNumber);\naccNumber = 3;\nstoragePage.toggleAccordion(accNumber);\nstoragePage.assertAccordionIsOpened(accNumber);\nstoragePage.assertAccordionsAreClosedExcept(accNumber);",
+              "err": {},
+              "uuid": "e751a283-a88f-4055-8c54-b5f2573e6506",
+              "parentUUID": "8da32192-367c-4409-b4db-42f0599e8697",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c4b90c4b-83dc-4aff-a9cb-b2ce4e6b1b63",
+            "0c51e53c-e595-4696-abc2-c09c5d7f17d7",
+            "e751a283-a88f-4055-8c54-b5f2573e6506"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18746,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c6418ce2-851c-4af5-b546-0e4d199def46",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/contact.cy.js",
+      "file": "cypress/e2e/specs/contact.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+          "title": "Test Contact",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully sending Talk to an expert form with valid values",
+              "fullTitle": "Test Contact Successfully sending Talk to an expert form with valid values",
+              "timedOut": null,
+              "duration": 11083,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "contactPage.fillAndSubmitTalkExpertForm(user);\ncontactPage.assertSuccessSentTalkExpertForm(user.email);",
+              "err": {},
+              "uuid": "caa93655-f81a-4cb0-bd1b-5a6ef6d6d9b2",
+              "parentUUID": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cannot submit Talk to an expert form with empty required fields",
+              "fullTitle": "Test Contact Cannot submit Talk to an expert form with empty required fields",
+              "timedOut": null,
+              "duration": 21894,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "contactPage.chooseReasonSelect(\"Sales-Inquiry\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"primaryInterest\", \"This field is required.\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"website\", \"Must be a url. http://www.example.com/\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"email\", \"Must be valid email. example@yourdomain.com\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"lastName\", \"This field is required.\");\ncy.reload(true);\ncontactPage.chooseReasonSelect(\"Support\");\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"firstName\", \"This field is required.\");\ncy.reload(true);\nbasePage.fillFirstNameInput(user.firstName);\nbasePage.fillLastNameInput(user.lastName);\nbasePage.fillEmailInput(user.email);\nbasePage.fillWebsiteInput(user.website);\nbasePage.submitForm();\nbasePage.assertErrorMessage(\"reasonContact\", \"This field is required.\");",
+              "err": {},
+              "uuid": "d1bae4ec-0edf-4f79-bcdb-30adc9f1590d",
+              "parentUUID": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "All phonenumbers in Calling from overseas section are links as tel",
+              "fullTitle": "Test Contact All phonenumbers in Calling from overseas section are links as tel",
+              "timedOut": null,
+              "duration": 2049,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "contactPage.assertLinkTextNumberEqualToHrefTel();\ncontactPage.assertPhonenumbersAreLinksAsTel();",
+              "err": {},
+              "uuid": "6b9ebc96-89e3-4fc3-b929-229965dbde38",
+              "parentUUID": "0c17e9a0-0713-44b0-a44a-f59cf67712e1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "caa93655-f81a-4cb0-bd1b-5a6ef6d6d9b2",
+            "d1bae4ec-0edf-4f79-bcdb-30adc9f1590d",
+            "6b9ebc96-89e3-4fc3-b929-229965dbde38"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35026,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
