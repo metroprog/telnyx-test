@@ -30,7 +30,7 @@ jobs:
                 mkdir public
                 cp -r cypress/videos public/videos            
             - name: Merge test results into one
-              run: npx mochawesome-merge cypress/results/json/*.json -o index.json
+              run: npx mochawesome-merge cypress/report/json/*.json -o index.json
             - name: Generate HTML report
               run: npx marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html
             - name: Deploy report page
