@@ -24,15 +24,15 @@ jobs:
             - name: Install dependencies # install npm packages
               run: npm ci
             - name: Run tests
-              run: npm run cypress run --browser chrome --config video=true
+              run: npx cypress run --browser chrome --config-file 1366p.config.js
             - name: Copy test execution videos
               run: |
                 mkdir public
                 cp -r cypress/videos public/videos            
             - name: Merge test results into one
-              run: npm run mochawesome-merge cypress/results/json/*.json -o index.json
+              run: npx mochawesome-merge cypress/results/json/*.json -o index.json
             - name: Generate HTML report
-              run: npm run marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html
+              run: npx marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html
             - name: Deploy report page
               uses: peaceiris/actions-gh-pages@v3
               with:
