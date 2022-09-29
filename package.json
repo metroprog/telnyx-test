@@ -9,8 +9,8 @@
     "cypress:run": "cypress run",
     "cypress:run:chrome1366": "cypress run --config-file 1366p.config.js --browser chrome",
     "merge:reports": "mochawesome-merge \"cypress/report/*.json\" -o \"cypress/report/index.json\"",
-    "generate:report": "marge cypress/report/index.json --reportDir ./ --inline",
-    "delete:reports": "del /F/Q/S cypress\\report\\*.*"
+    "generate:report": "marge cypress/report/index.json --reportDir public --reportPageTitle index.html --inline",
+    "delete:reports": "del /F/Q/S cypress\\report\\*.* && rd /Q/S public"
   },
   "author": "",
   "license": "ISC",

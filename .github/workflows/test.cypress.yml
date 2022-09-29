@@ -24,15 +24,17 @@ jobs:
             - name: Install dependencies # install npm packages
               run: npm ci
             - name: Run tests
-              run: npx cypress run --browser chrome --config-file 1366p.config.js
+              run: npm run cypress:run:chrome1366
+              # if tests fail it runs other workflow steps responsible for generating a report
+              continue-on-error: true
             - name: Copy test execution videos
               run: |
                 mkdir public
                 cp -r cypress/videos public/videos            
             - name: Merge test results into one
-              run: npx mochawesome-merge cypress/report/*.json -o index.json
+              run: npm run merge:reports
             - name: Generate HTML report
-              run: npx marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html
+              run: npm run generate:report
             - name: Deploy report page
               uses: peaceiris/actions-gh-pages@v3
               with:
