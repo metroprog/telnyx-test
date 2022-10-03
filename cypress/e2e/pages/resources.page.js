@@ -41,15 +41,25 @@ class ResourcesPage {
         cy.url().should("include", `?category=${encodeURIComponent(filterByContentNames[number - 1])}`);
     }
 
-    assertArticlesCategoryOnlyFiltered(number) {
+    assertArticlesOnlyFilteredByContent(number) {
         cy.get(articlesPagination).scrollIntoView({ duration: 3000 });
         cy.get(articlesCategories).each(($category, index, $list) => {
             expect($category.get(0).textContent).to.contain(filterByContentNames[number - 1]);
         });
     }
 
-    get articlesCount() {
-        return cy.get(articlesCategories).its("length");
+    assertArticlesWithoutFiltrationByContent() {
+        cy.get(articlesPagination).scrollIntoView({ duration: 3000 });
+        cy.get(articlesCategories).then(($categs) => {
+            let allArticlesCategories = [];
+            $categs.each((index, value) => {
+                if (index > 0) {
+                    allArticlesCategories.push(value.textContent);
+                }
+            });
+            let uniqueCategories = [...new Set(allArticlesCategories)];
+            expect(uniqueCategories).to.have.length.greaterThan(1);
+        });
     }
 }
 
