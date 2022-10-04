@@ -62,3 +62,5 @@ npm run generate:report
 ```
 
 See example of reporting at: [gh-pages](https://metroprog.github.io/telnyx-test/)
+
+Bug reports are at: [issues](https://github.com/metroprog/telnyx-test/issues)
